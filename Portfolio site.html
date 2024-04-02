@@ -66,14 +66,25 @@
             <div class="project python">
                 <h2>fahrenheit and celsius converter</h2>
                 <p>Simple python program converts celsius to fahrenheit and vice versa.</p>
+                <select onchange="showMedia(this.value)">
+                    <option value="none">Click for preview of media</option>
+                    <option value="picture">Pictures</option>
+                    <option value="video">Video</option>
+                </select>
+                <div id="media-python"></div>
                 <a href="https://github.com/HtML-warrior/square.py">Click here</a>
             </div>
-    </div>
 
     <div id="projects">
         <div class="project python">
             <h2>Calculator</h2>
             <p>A Simple calculator in python.</p>
+            <select onchange="showMedia(this.value)">
+                <option value="none">Click for preview of media</option>
+                <option value="picture">Pictures</option>
+                <option value="video">Video</option>
+            </select>
+            <div id="media-python"></div>
             <a href="https://github.com/HtML-warrior/Simple-Calculator">Click here</a>
         </div>
 </div>
@@ -82,6 +93,12 @@
     <div class="project python">
         <h2>Age Calculator</h2>
         <p>Simple Calculator to tell you your age.</p>
+        <select onchange="showMedia(this.value)">
+            <option value="none">Click for preview of media</option>
+            <option value="picture">Pictures</option>
+            <option value="video">Video</option>
+        </select>
+        <div id="media-python"></div>
         <a href="https://github.com/HtML-warrior/Age-calculator">Click here</a>
     </div>
 </div>
@@ -90,7 +107,29 @@
     <div class="project python">
         <h2>Color Mixer</h2>
         <p>Simple app to mix colors to see what they make.</p>
+        <select onchange="showMedia(this.value)">
+            <option value="none">Click for preview of media</option>
+            <option value="picture">Pictures</option>
+            <option value="video">Video</option>
+        </select>
+        <div id="media-python"></div>
         <a href="https://github.com/HtML-warrior/Color-Mixer">Click here</a>
+    </div>
+</div>
+
+<div id="projects">
+    <div class="project html">
+        <h2>Map API</h2>
+        <p>Mapping tool used with google api.</p>
+        <a href="https://github.com/HtML-warrior/Html-api-map">Click Here</a>
+    </div>
+</div>
+
+<div id="projects">
+    <div class="project html">
+        <h2>Order form</h2>
+        <p>Simple order form used to take reservation. This was used for a small business in GA.</p>
+        <a href="https://github.com/HtML-warrior/Order-form">Click Here</a>
     </div>
 </div>
 
@@ -98,21 +137,32 @@
     <div class="project html">
         <h2>Clothing website</h2>
         <p>Complex website built for customer using html and css.</p>
-        <a href="https://eleven27.squarespace.com/">Eleven27 The Brand</a>
+        <a href="https://eleven27.squarespace.com/">Click Here</a>
     </div>
 </div>
         
-    <script>
-        function filterProjects(language) {
-            var projects = document.getElementsByClassName('project');
-            for (var i = 0; i < projects.length; i++) {
-                if (language === 'all' || projects[i].classList.contains(language)) {
-                    projects[i].style.display = 'block';
-                } else {
-                    projects[i].style.display = 'none';
-                }
+<script>
+    function filterProjects(language) {
+        var projects = document.getElementsByClassName('project');
+        for (var i = 0; i < projects.length; i++) {
+            if (language === 'all' || projects[i].classList.contains(language)) {
+                projects[i].style.display = 'block';
+            } else {
+                projects[i].style.display = 'none';
             }
         }
-    </script>
+    }
+
+    function showMedia(mediaType) {
+        var mediaContainer = document.getElementById('media-python'); // Change this ID for different projects
+        mediaContainer.innerHTML = ''; // Clear previous media
+
+        if (mediaType === 'picture') {
+            mediaContainer.innerHTML = '<img src="path_to_picture" alt="Picture">';
+        } else if (mediaType === 'video') {
+            mediaContainer.innerHTML = '<video controls><source src="path_to_video" type="video/mp4"></video>';
+        }
+    }
+</script>
 </body>
 </html>
